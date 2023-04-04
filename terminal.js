@@ -4,7 +4,7 @@ const express = require('express');
 const expressWs = require('express-ws')
 const os = require("os");
 const pty = require("node-pty");
-const TERMINAL_PORT=8086
+const TERMINAL_PORT=9002
 const app = express()
 const terminals = {}, logs = {}
 
