@@ -166,7 +166,7 @@
 <script>
     let exps_arr
     function get_exps(exp_num, doc_name){
-        axios.get('http://'+URL+':8099/get_exps', {
+        axios.get('http://'+URL+':9001/get_exps', {
         }).then(response =>{
             exps_arr = response.data.exps
             make_page(exps_arr[exp_num], doc_name)
@@ -181,7 +181,7 @@
 <script>
     function make_page(exp, doc_name){
         let content = document.getElementById('document_content');
-        axios.get('http://'+URL+':8099/get_content', {
+        axios.get('http://'+URL+':9001/get_content', {
             params: {
                 exp: exp,
                 doc_name: doc_name,
