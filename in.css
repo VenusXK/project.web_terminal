@@ -4,7 +4,28 @@
 
 @layer components {
     .txt{
-        @apply  h-10 bg-[#D8D8D8] opacity-20 rounded-lg mr-8 float-left
+        @apply  h-10 bg-[#f8f8f8] rounded-lg mr-8 float-left font-mono text-center pt-1
+    }
+    .label{
+        @apply w-36 h-full bg-white float-left p-3 pt-2 border-r-4 border-[#f2f3f4] hover:cursor-pointer
+    }
+    .term_label{
+        @apply w-32 h-9 border-[1px] rounded-md border-purple-400 text-purple-400 text-center pt-1 ml-[3%] float-left hover:text-purple-800 hover:cursor-pointer
+    }
+    .term_label_l{
+        @apply w-[63%] float-left text-right
+    }
+    .term_label_r{
+        @apply w-[30%] float-right
+    }
+    .term_label_svg{
+        @apply w-6 h-6 pt-[1px] 
+    }
+    .foot_btn{
+        @apply txt w-32 border-blue-400 hover:cursor-pointer border-2 hover:border-purple-600 float-left text-purple-400  hover:text-purple-600  text-xl
+    }
+    .foot_btn_orange{
+        @apply txt bg-orange-50 w-32 border-orange-400 hover:cursor-pointer border-2 hover:border-orange-600 float-right text-orange-400 hover:text-orange-600  text-xl
     }
    
 }
