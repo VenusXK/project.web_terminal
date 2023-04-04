@@ -53,7 +53,7 @@ app.post('/terminals', (req, res) => {
     terminals[term.pid] = term
     // 创建记录交互信息的存储值
     logs[term.pid] = ''
-    term.write("su visitor \ \r")
+    term.write("su visitor \r")
     term.write("clear\r")
 
     setTimeout(() => {
