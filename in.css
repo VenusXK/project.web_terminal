@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .txt{
+        @apply  h-10 bg-[#D8D8D8] opacity-20 rounded-lg mr-8 float-left
+    }
+   
+}
