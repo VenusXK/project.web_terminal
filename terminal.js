@@ -12,8 +12,8 @@ const terminals = {}, logs = {}
 // const USE_BINARY = os.platform() !== "win32";
 const USE_BINARY = os.platform() !== "linux";
 console.log(os.platform())
-// const URL = "122.9.163.105";
-const URL = "127.0.0.1";
+const URL = "122.9.163.105";
+// const URL = "127.0.0.1";
 
 // express升级为websocket-express
 expressWs(app);
