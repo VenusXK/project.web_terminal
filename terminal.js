@@ -9,8 +9,8 @@ const app = express()
 const terminals = {}, logs = {}
 
 // 当为win32时，返回false，表示不使用二进制模式
-const USE_BINARY = os.platform() !== "win32";
-// const USE_BINARY = os.platform() !== "linux";
+// const USE_BINARY = os.platform() !== "win32";
+const USE_BINARY = os.platform() !== "linux";
 console.log(os.platform())
 // const URL = "122.9.163.105";
 const URL = "127.0.0.1";
