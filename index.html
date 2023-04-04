@@ -1,3 +1,9 @@
+<script>
+    const URL = "127.0.0.1";
+    // const URL = "122.9.163.105";
+    const TERMINAL_PORT = "8086";
+    // const TERMINAL_PORT = "4000"
+  </script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./out.css">
-    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.2.2/axios.js"></script>
+    <link rel="stylesheet" href="./node_modules/xterm/css/xterm.css" />
+    <script src="./node_modules/xterm/lib/xterm.js"></script>
+    <script src="./node_modules/xterm-addon-attach/lib/xterm-addon-attach.js"></script>
+
 </head>
 <body class="bg-[#F1F2F3]">
     <div id="nav" class="w-full h-16 bg-[#fff] pt-3 pl-10 fixed">
@@ -15,8 +25,8 @@
     </div>
     <div id="content" class="w-full h-max ">
         <div id="left_container" class="w-[50%] h-screen float-left pt-20 overflow-hidden">
-            <div id="terminal" class=" h-[85%] w-[95%] bg-black m-auto mt-12">
-
+            <div id="terminal_container" class=" h-[100%] w-[95%] bg-black m-auto mt-12">
+                <div id="terminal" style="width:100%;height: auto;margin-top: 10%;border-radius: 0px;overflow: hidden;background: black;border:10px solid black;"></div>
             </div>
         </div>
         <div id="right_container" class="w-[50%]  h-screen float-right pt-20 ">
@@ -35,10 +45,44 @@
         </div>
 
     </div>
-    <div id="foot" class="w-full h-20 fixed bg-[#fff] bottom-0 pt-5 pr-5 pl-10">
+    <div id="foot" class="w-full h-20 fixed bg-[#fff] bottom-0 pt-5 pr-5 pl-10 border-t-[1px] border-[#e4e4e4]">
         <div class="txt w-32 opacity-50"></div>
         <!-- <div class="txt w-28 opacity-50"></div> -->
         <div class="txt w-32 opacity-50 float-right"></div>
     </div>
 </body>
 </html>
+
+<script>
+    var pid = ''
+    // xterm官网实例
+    // 创建terminal对象
+    var term = new Terminal();
+    // open对应id内容
+    term.open(document.getElementById('terminal'));
+    let terchildchild = document.getElementById('terminal').firstChild.firstChild;
+    let terchild = document.getElementById('terminal');
+    console.log(terchild.style);
+    terchildchild.style.overflowY = "hidden";
+    terchild.style.overflow = "hidden";
+    terchild.style.zIndex = 10;
+    // 写入初始信息
+    // term.write('请稍后\x1B[1;32m正在创建连接终端中\x1B[0m $ ')
+    fetch('http://'+URL+":"+TERMINAL_PORT+"/"+"terminals",{method:"POST"})
+    .then((response)=>response.text(response))
+    .then((response)=>{
+      // term.write();
+      console.log(response)
+      let content = document.getElementById('content');
+        let socket = new WebSocket('ws://'+URL+":"+TERMINAL_PORT+"/"+"terminals"+"/"+response);
+        console.log(socket.readyState);
+
+        socket.onopen = function(){
+          console.log(socket.readyState);
+        }
+
+        const attachAddon  = new AttachAddon.AttachAddon(socket);
+        term.loadAddon(attachAddon)
+
+    });
+  </script>

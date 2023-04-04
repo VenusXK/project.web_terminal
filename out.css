@@ -618,6 +618,10 @@ video {
   margin-right: 1.25rem;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-20 {
   height: 5rem;
 }
@@ -727,8 +731,25 @@ video {
   width: 9rem;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
+.w-\[full\] {
+  width: full;
+}
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+.border-t-\[1px\] {
+  border-top-width: 1px;
+}
+
+.border-\[\#e4e4e4\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(228 228 228 / var(--tw-border-opacity));
 }
 
 .bg-\[\#F1F2F3\] {
