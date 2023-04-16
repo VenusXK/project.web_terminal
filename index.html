@@ -127,7 +127,7 @@
         <div id="pre" onclick="pre_exp()" class="foot_btn">上一题</div>
         <div class="foot_btn w-96">题目列表</div>
         <div id="next" onclick="next_exp()" class="foot_btn float-right">下一题</div>
-        <div class="foot_btn_orange">答案检测</div>
+        <div id="check" class="foot_btn_orange">答案检测</div>
 
     </div>
 </body>
@@ -135,6 +135,20 @@
 
 <script>
     let exp_num = 0
+</script>
+
+<script>
+    let cnt = 0;
+    let check = document.getElementById('check');
+    check.onclick = function(){
+        if(cnt == 0){
+            alert("🤔🤔 答案错误！！！")
+            cnt++;
+        }
+        else{
+            alert("😋😋 答案正确！！！")
+        }
+    }
 </script>
 
 <script>
