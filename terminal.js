@@ -56,9 +56,9 @@ app.post('/terminals', (req, res) => {
     term.write("su visitor \r")
     term.write("clear\r")
 
-    setTimeout(() => {
-        term.write("figlet Code Here\r");
-    }, 200);
+    // setTimeout(() => {
+    //     term.write("figlet Code Here\r");
+    // }, 200);
 
     setTimeout(() => {
         term.write("mysql\r");
