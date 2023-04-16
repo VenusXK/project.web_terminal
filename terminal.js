@@ -58,7 +58,10 @@ app.post('/terminals', (req, res) => {
 
     setTimeout(() => {
         term.write("figlet Code Here\r");
-        term.write("mysql");
+    }, 200);
+
+    setTimeout(() => {
+        term.write("mysql\r");
     }, 200);
     // 将终端返回的数据记录到存储内容内
     term.onData(function (data) {
