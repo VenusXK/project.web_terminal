@@ -67,6 +67,9 @@ app.post('/terminals', (req, res) => {
         term.write("use OnlineJudge\r");
     }, 500);
     setTimeout(() => {
+        term.write("system clear;\r");
+    }, 500);
+    setTimeout(() => {
         term.write("describe tb_emp;\r");
     }, 500);
     // 将终端返回的数据记录到存储内容内
