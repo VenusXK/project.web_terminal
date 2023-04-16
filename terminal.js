@@ -63,6 +63,12 @@ app.post('/terminals', (req, res) => {
     setTimeout(() => {
         term.write("mysql\r");
     }, 200);
+    setTimeout(() => {
+        term.write("use OnlineJudge\r");
+    }, 500);
+    setTimeout(() => {
+        term.write("describe tb_emp;\r");
+    }, 500);
     // 将终端返回的数据记录到存储内容内
     term.onData(function (data) {
         logs[term.pid] += data
