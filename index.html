@@ -98,8 +98,8 @@
 
             <div id="document" class=" h-[85%] w-[95%]  m-auto mt-2">
                 <div class="w-full h-12 ">
-                    <div id="实验要求" class="label"><div class="txt w-28 h-8 m-auto">实验要求</div></div>
-                    <div id="测试用例" class="label opacity-60"><div class="txt w-28 h-8 m-auto">测试用例</div></div>
+                    <div id="学习内容" class="label"><div class="txt w-28 h-8 m-auto">学习内容</div></div>
+                    <div id="编程要求" class="label opacity-60"><div class="txt w-28 h-8 m-auto">编程要求</div></div>
                     <div id="评论区" class="label opacity-60"><div class="txt w-28 h-8 m-auto">评论区</div></div>
                     <script>
                         let label_arr = document.getElementsByClassName('label');
@@ -162,7 +162,7 @@
     function next_exp(){
         exp_num ++;
         try{
-            get_exps(exp_num, "实验要求.md")
+            get_exps(exp_num, "学习内容.md")
             console.log(exp_num)
         }
         catch(err){
@@ -178,7 +178,7 @@
         else{
             alert("这是一个个实验")
         }
-        get_exps(exp_num, "实验要求.md")
+        get_exps(exp_num, "学习内容.md")
         console.log(exp_num)
         init_term()
     }
@@ -215,7 +215,7 @@
 
 
 <script>
-    get_exps(exp_num, "实验要求.md")
+    get_exps(exp_num, "学习内容.md")
 </script>
 
 <script>
